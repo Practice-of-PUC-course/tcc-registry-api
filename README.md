@@ -1,2 +1,2 @@
 # tcc-address-api
-The address registration web API.
+The registry web API.
