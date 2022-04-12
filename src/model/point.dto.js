@@ -29,7 +29,18 @@ class Point {
      * @returns {...} a GeoJson Object
      */
     toGeoJson=()=>{
-        return JSON.stringify({"type":"Point","coordinates":[this.longitude,this.latitude]});
+        return JSON.stringify(
+            {
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:4326"
+                    }
+                },
+                "type":"Point",
+                "coordinates":[this.longitude,this.latitude]
+            }
+        );
     }
 };
 

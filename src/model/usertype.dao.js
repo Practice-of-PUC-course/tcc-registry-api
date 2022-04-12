@@ -12,6 +12,13 @@ class UserTypeDAO extends Model {
   };
 };
 
+/**
+ * Init the model, associated with a Sequelize instance
+ * and define the initial dataset when the table is create into database.
+ * 
+ * @param {Sequelize} db the Sequelize ORM instance connected into the database.
+ * @returns {boolean} true in success or false otherwise.
+ */
 const initUserTypeModel=(db)=>{
     if (!db){
         console.log("Missing connection with db.");
@@ -45,4 +52,11 @@ const initUserTypeModel=(db)=>{
     return true;
 };
 
-export { UserTypeDAO, initUserTypeModel };
+const getUserTypes=(id=null)=>{
+    let where={
+        where: (id?{id:id}:{})
+    };
+    return UserTypeDAO.findAll(where);
+};
+
+export { UserTypeDAO, initUserTypeModel, getUserTypes };

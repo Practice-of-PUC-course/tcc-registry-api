@@ -7,6 +7,13 @@ class UserDAO extends Model {
   };
 };
 
+/**
+ * Init the model, associated with a Sequelize instance
+ * and define the initial dataset when the table is create into database.
+ * 
+ * @param {Sequelize} db the Sequelize ORM instance connected into the database.
+ * @returns {boolean} true in success or false otherwise.
+ */
 const initUserModel=(db)=>{
     if (!db){
         console.log("Missing connection with db.");
@@ -49,6 +56,19 @@ const initUserModel=(db)=>{
             console.log("A new User has been added.");
         }
     );
+    return true;
 };
 
-export { UserDAO, initUserModel };
+/**
+ * Gets one or all users from a user table.
+ * @param {string} (optional) id the identifier of one user.
+ * @returns {Promise<UserDAO[]>} One or more instances of User model.
+ */
+const getUser=(id=null)=>{
+    let where={
+        where: (id?{id:id}:{})
+    };
+    return UserDAO.findAll(where);
+};
+
+export { UserDAO, initUserModel, getUser };

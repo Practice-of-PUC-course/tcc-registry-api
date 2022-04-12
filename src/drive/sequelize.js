@@ -5,10 +5,15 @@ dotenv.config({ silent: true });
 
 /**
  * Start a connection with the database and return an instance.
- * 
+ * If has a reference of another Sequelize object with active connection pool, will be returned.
  * Set .env to change configuration of the API account
  */
 const openConnection=()=>{
+
+    if (!(process.env.DB && process.env.PASSWORD && process.env.USER && process.env.HOST && process.env.DIALECT)) {
+        console.log("Missing the database parameters. Review the .env configuration file.");
+        return false;
+    }
 
     let opts={
         pool: {
@@ -31,12 +36,9 @@ const openConnection=()=>{
             pool: opts.pool
         }
     );
-    if (!(process.env.DB && process.env.PASSWORD && process.env.USER && process.env.HOST && process.env.DIALECT)) {
-        console.log("Missing the database parameters. Review the .env configuration file.");
-        return false;
-    }
 
-    return postgres;
+    if(typeof postgres=='object') return postgres;
+    else return false;
 };
 
 export { openConnection };

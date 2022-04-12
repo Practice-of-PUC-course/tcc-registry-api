@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "3f165cdf-3c49-48a1-b0da-3deebc500706",
+		"name": "POC-APIs (registry)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registry API",
+			"item": [
+				{
+					"name": "health check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all user types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/usertype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"usertype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get address user by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/address/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"address",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add address to user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/address?userId=2&street=Rua Major Antônio Domingues&number=120&county=São José dos Campos&state=SP&longitude=-45&latitude=-23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"address"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "street",
+									"value": "Rua Major Antônio Domingues"
+								},
+								{
+									"key": "number",
+									"value": "120"
+								},
+								{
+									"key": "county",
+									"value": "São José dos Campos"
+								},
+								{
+									"key": "state",
+									"value": "SP"
+								},
+								{
+									"key": "longitude",
+									"value": "-45"
+								},
+								{
+									"key": "latitude",
+									"value": "-23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get type of user by type id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/usertype/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"usertype",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset model",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/registry/v1/model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registry",
+								"v1",
+								"model"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

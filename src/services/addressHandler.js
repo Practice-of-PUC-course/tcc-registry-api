@@ -1,35 +1,26 @@
-import { Address } from '../model/address.dao.js';
-import { addressDTO } from '../model/address.dto.js';
-import { DB } from '../services/dbHandler.js';
-
-
-const createAddress=(addressDTO)=>{
-    (async () => {
-        await sequelize.sync();
-        const address = await Address.create({
-            streetName: addressDTO.streetName,
-            houseNumber: addressDTO.houseNumber,
-            countyName: addressDTO.countyName,
-            stateName: addressDTO.stateName,
-            
-        });
-        console.log(address.toJSON());
-    })();
-};
+import { getByUserId, add } from '../model/address.dao.js';
 
 /**
- * Validate the params of the Address object
- * @returns true if all params isn't empty
+ * Gets an Address by give user identifier.
+ * @returns An Address, or false on failure.
  */
-const isValidAddress=(address)=>{
-    const isEmpty=(s)=>{return s==''};
-    return (!isEmpty(address.street) && !isEmpty(address.number) && !isEmpty(address.county) && !isEmpty(address.state));
+const getAddress=async (id)=>{
+    const address=await getByUserId(id).catch(
+        (reason)=>{
+            console.log("Failure on get address: "+reason);
+            return false;
+        }
+    );
+    return address;
 };
 
-const createSafeAddress=(street, number, county, state)=>{
-    let address=new Address(street, number, county, state);
-    if(isValidAddress(address)) return address;
-    else return false;
+const addAddress=async (userId, address)=>{
+    return await add(userId, address).catch(
+        (reason)=>{
+            console.log("Failure on add address: "+reason);
+            return false;
+        }
+    );
 };
 
-export{ createAddress };
+export{ getAddress, addAddress };
