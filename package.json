@@ -1,6 +1,6 @@
 {
   "name": "address-api",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A REST API using Node.js to store and get addresses from a Postgres database.",
   "main": "src/server.js",
   "type": "module",
