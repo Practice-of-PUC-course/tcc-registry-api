@@ -58,12 +58,12 @@ The configuration file called .env must be created in the project root before st
 NODE_ENV="development"
 API_LISTEN_PORT="3000"
 DIALECT="postgres"
-HOST="192.168.15.36"
-PORT="5433"
+HOST="<host name or ip>"
+PORT="5432"
 DB="siga_poc"
 USERNAME="postgres"
 PASSWORD="postgres"
-# *ALL API KEYS HERE ARE UNREAL
+# *All values here are for testing purposes only. 
 ```
 
 ## Architecture (backend)
