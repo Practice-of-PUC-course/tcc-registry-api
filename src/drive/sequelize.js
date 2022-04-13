@@ -10,7 +10,7 @@ dotenv.config({ silent: true });
  */
 const openConnection=()=>{
 
-    if (!(process.env.DB && process.env.PASSWORD && process.env.USER && process.env.HOST && process.env.DIALECT)) {
+    if (!(process.env.DB && process.env.PASSWORD && process.env.USERNAME && process.env.HOST && process.env.DIALECT)) {
         console.log("Missing the database parameters. Review the .env configuration file.");
         return false;
     }
