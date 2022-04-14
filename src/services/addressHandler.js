@@ -1,4 +1,4 @@
-import { getByUserId, add } from '../model/address.dao.js';
+import { getByUserId, add, update } from '../model/address.dao.js';
 
 /**
  * Gets an Address by give user identifier.
@@ -23,4 +23,13 @@ const addAddress=async (userId, address)=>{
     );
 };
 
-export{ getAddress, addAddress };
+const updateAddress=async (userId, address)=>{
+    return await update(userId, address).catch(
+        (reason)=>{
+            console.log("Failure on update address: "+reason);
+            return false;
+        }
+    );
+};
+
+export{ getAddress, addAddress, updateAddress };

@@ -81,4 +81,14 @@ const add = (userId, address) => {
   return AddressDAO.create(address.toJson(userId));
 };
 
-export { AddressDAO, initAddressModel, getByUserId, add };
+/**
+ * Updating an exists address of a user in the database.
+ * @param {number|string} userId The user identifier.
+ * @param {Address} address A DTO Address instance.
+ * @returns {Promise<any>} A promise that it will be saved.
+ */
+const update = (userId, address) => {
+  return AddressDAO.update(address.toJson(userId),{where:{id:address.id}});
+};
+
+export { AddressDAO, initAddressModel, getByUserId, add, update };
