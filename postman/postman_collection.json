@@ -49,6 +49,28 @@
 					"response": []
 				},
 				{
+					"name": "Get all users by type Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/registry/v1/user/type/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"registry",
+								"v1",
+								"user",
+								"type",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get all user types",
 					"request": {
 						"method": "GET",
@@ -95,7 +117,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/registry/v1/address/1",
+							"raw": "http://localhost/registry/v1/address/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -104,7 +126,7 @@
 								"registry",
 								"v1",
 								"address",
-								"1"
+								"4"
 							]
 						}
 					},
