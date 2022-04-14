@@ -1,12 +1,23 @@
 /**
  * Routers for user 
  */
-import { getUsers, getTypes } from '../services/userHandler.js';
+import { getUsers, getUsersByTypeId, getTypes } from '../services/userHandler.js';
 import pkg from 'express';
 const { Router } = pkg;
 
 const userRouter = Router();
 const userTypeRouter = Router();
+
+// get user by type id
+userRouter.get("/type/:id",
+    async (req, res) => {
+        const { id } = req.params;
+        const data = await getUsersByTypeId(id);
+        if(!data)
+            res.status(500).json({ error: 'Failure on take a users.' });
+        else res.json(data);
+    }
+);
 
 // get user by id
 userRouter.get("/:id",

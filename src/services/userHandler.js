@@ -1,10 +1,20 @@
-import { getUser } from '../model/user.dao.js';
+import { getUser, getUserByTypeId } from '../model/user.dao.js';
 import { getUserTypes } from '../model/usertype.dao.js';
 
 const getUsers=async (id=null)=>{
     const users=await getUser(id).catch(
         (reason)=>{
-            console.log("Failure on get user type(s): "+reason);
+            console.log("Failure on get user(s): "+reason);
+            return false;
+        }
+    );
+    return users;
+};
+
+const getUsersByTypeId=async (id=null)=>{
+    const users=await getUserByTypeId(id).catch(
+        (reason)=>{
+            console.log("Failure on get user(s) by type: "+reason);
             return false;
         }
     );
@@ -21,4 +31,4 @@ const getTypes=async (id=null)=>{
     return types;
 };
 
-export{ getUsers, getTypes };
+export{ getUsers, getUsersByTypeId, getTypes };

@@ -71,4 +71,16 @@ const getUser=(id=null)=>{
     return UserDAO.findAll(where);
 };
 
-export { UserDAO, initUserModel, getUser };
+/**
+ * Gets all users from a user type id.
+ * @param {string} (mandatory) id the identifier of user type.
+ * @returns {Promise<UserDAO[]>} One or more instances of User model.
+ */
+ const getUserByTypeId=(id=null)=>{
+    let where={
+        where: (id?{typeId:id}:{})
+    };
+    return UserDAO.findAll(where);
+};
+
+export { UserDAO, initUserModel, getUser, getUserByTypeId };
