@@ -66,7 +66,7 @@ const initAddressModel = (db) => {
  */
 const getByUserId = (id = '-1') => {
   let where = {
-    where: { id: id }
+    where: { userId: id }
   };
   return AddressDAO.findOne(where);
 };
