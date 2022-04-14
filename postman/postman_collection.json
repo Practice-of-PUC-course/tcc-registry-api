@@ -14,12 +14,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/health",
+							"raw": "http://localhost/registry/v1/health",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
@@ -35,12 +34,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/user",
+							"raw": "http://localhost/registry/v1/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
@@ -56,12 +54,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/usertype",
+							"raw": "http://localhost/registry/v1/usertype",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
@@ -77,12 +74,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/user/1",
+							"raw": "http://localhost/registry/v1/user/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
@@ -99,12 +95,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/address/1",
+							"raw": "http://localhost/registry/v1/address/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
@@ -121,12 +116,11 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/address?userId=2&street=Rua Major Antônio Domingues&number=120&county=São José dos Campos&state=SP&longitude=-45&latitude=-23",
+							"raw": "http://localhost/registry/v1/address?userId=2&street=Rua Major Antônio Domingues&number=120&county=São José dos Campos&state=SP&longitude=-45&latitude=-23",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
@@ -167,17 +161,70 @@
 					"response": []
 				},
 				{
+					"name": "Update address to user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/registry/v1/address?userId=2&addressId=2&street=Rua Major Antônio Domingues&number=120&county=São José dos Campos&state=SP&longitude=-45&latitude=-23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"registry",
+								"v1",
+								"address"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "addressId",
+									"value": "2"
+								},
+								{
+									"key": "street",
+									"value": "Rua Major Antônio Domingues"
+								},
+								{
+									"key": "number",
+									"value": "120"
+								},
+								{
+									"key": "county",
+									"value": "São José dos Campos"
+								},
+								{
+									"key": "state",
+									"value": "SP"
+								},
+								{
+									"key": "longitude",
+									"value": "-45"
+								},
+								{
+									"key": "latitude",
+									"value": "-23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get type of user by type id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/usertype/1",
+							"raw": "http://localhost/registry/v1/usertype/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
@@ -194,12 +241,11 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/registry/v1/model",
+							"raw": "http://localhost/registry/v1/model",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
 							"path": [
 								"registry",
 								"v1",
